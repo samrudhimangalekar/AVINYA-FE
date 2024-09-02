@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'auth/login', component: LoginComponent },
   { path: 'auth/register', component: RegisterComponent },
   { path: '', redirectTo: '/auth/login', pathMatch: 'full' },  
+ 
 ];
 
 @NgModule({
@@ -14,3 +15,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+

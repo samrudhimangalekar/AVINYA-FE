@@ -1,0 +1,13 @@
+
+[
+    {
+        "uuid": "123e4567-e89b-12d3-a456-426614174000",
+        "username": "Samruddhi",
+        "password": "password123"
+    },
+    {
+        "uuid": "123e4567-e89b-12d3-a456-426614174001",
+        "username": "Nishant",
+        "password": "1234"
+    }
+]

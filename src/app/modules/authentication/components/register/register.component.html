@@ -1,1 +1,77 @@
-<p>register works!</p>
+<div class="b-red h2-100">
+    <div class="row h-100 b-blue">
+
+        <div class="col-12 col-md-8 d-none b-red d-md-flex flex-column justify-content-center align-items-center">
+
+            <h1>Welcome</h1>
+            
+        </div>
+  
+
+ <div class="register-container col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+      <div class="register-form ">
+        <h1>Avinya</h1>
+        <h3>Register</h3>
+    
+    <!-- <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="firstName" name="firstName"/>
+        </div>
+     <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="lastName" name="lastName"  />
+        </div>
+     <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="email" name="email" />
+        </div>
+     <div class="form-group">
+            <label for="password">Password</label>
+            <input type="text" class="password" name="password"  />
+        </div>
+
+        <button type="button" class="me-3 btn btn-outline-primary">Register now</button> -->
+    
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" type="email" formControlName="email">
+              <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+                <small class="form-error" *ngIf="registerForm.get('email')?.errors?.['required']">Email is required</small>
+                <small class="form-error" *ngIf="registerForm.get('email')?.errors?.['email']">Invalid email format</small>
+              </div>
+            </div>
+          
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" type="text" formControlName="name">
+               <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched">
+                <small class="form-error" *ngIf="registerForm.get('name')?.errors?.['required']">Name is required</small>
+              </div> 
+            </div>
+          
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input id="age" type="text" formControlName="age">
+              <div *ngIf="registerForm.get('age')?.invalid && registerForm.get('age')?.touched">
+                <small class="form-error" *ngIf="registerForm.get('age')?.errors?.['required']">Age is required</small>
+                <small class="form-error" *ngIf="registerForm.get('age')?.errors?.['pattern']">Age must be a number</small>
+              </div> 
+            </div>
+          
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input id="password" type="password" formControlName="password">
+                 <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+                <small class="form-error" *ngIf="registerForm.get('password')?.errors?.['required']">Password is [required]</small>
+              </div>   
+            </div>
+          <div class="text-center">
+            <button type="submit" class="me-3 btn btn-outline-primary">Register</button>
+        </div>
+          </form>
+        </div>
+          
+        </div>
+</div>
+</div>
